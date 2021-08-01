@@ -198,3 +198,57 @@ console.log('hello world'.spacify())
 // 函数声明和函数表达式的区别
   // 1.函数声明会把函数 变量提升到首部，在函数之前可以调用；       函数不可以在循环，判断等等的地方声明；
   // 2.函数表达式只会把函数变量提升到首部，必须在赋值后才可以调用； 函数表达式可以在任何地方声明；
+
+// 14. 手写bind，call，apply
+Function.prototype.myCall= function (content = window, ...arg) {
+  content.fn = this
+  const res = content.fn(...arg)
+  delete content.fn
+  return res
+}
+
+Function.prototype.myApply = function (content = window, arg = []) {
+  content.fn = this
+  const res = content.fn(...arg)
+  delete content.fn
+  return res
+}
+
+Function.prototype.myBind = function (content = window, ...arg) {
+  content.fn = this
+  return function(...arg1) {
+    content.fn(...arg, ...arg1)
+    delete content.fn
+  }
+}
+
+let myaa = {age: 12}
+var age = 23
+function sayAge(a) {
+  console.log(this.age, this.age + a);
+}
+
+// console.log('1.', sayAge());
+// console.log('2.', sayAge(3));
+
+// 15. 数组扁平化
+function flat(arr) {
+  let res = []
+  arr.forEach(item => {
+    if (Array.isArray(item)) {
+      res.push(...flat(item))
+    } else {
+      res.push(item)
+    }
+  })
+  return res
+}
+
+let flatArr = [1,2,3,4,5,[1,34,124,21], [3,421,4,214,21,4,21,4,[4214,214,12,124,[123]]]]
+// console.log(flat(flatArr));
+
+let flatArrObj = [
+  { age: 12 },
+  1,2,3,313,13,31,31,3131,[1,2,321, {age: 12}, 12, [123,21,4,12]]
+]
+console.log(flat(flatArrObj));
