@@ -53,8 +53,7 @@ class Compiler {
   constructor(vm) {
     this.el = vm.el
     this.data = vm.data
-    this.methods = vm.methods = {}
-    console.log(vm, vm.methods);
+    this.methods = vm.methods || {}
 
     this.render(document.querySelector(vm.el))
   }

@@ -19,9 +19,8 @@ const events = {
         const keyItem = key.replace('{', '').replace('}', '').replace(' ', '').split('=')
         utils.setValue(data, keyItem[0], keyItem[1])
       } else {// 函数
-        console.log(Object.keys(methods), key.trim());
         if (Object.keys(methods).includes(key.trim())) {
-          methods[key]()
+          methods[key].call(vm.data)
         } else {
           console.error('没有定义该函数');
         }
