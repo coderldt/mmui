@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 1. 语义化 -->
+  <!-- 就是页面结构的一种规范吧，用正确的标签做正确的事。优点：易于维护和开发；网页的seo，爬虫；后续的兼容。 -->
+  <header></header>
+  <nav></nav>
+  <aside></aside>
+  <section></section>
+  <article></article>
+  <footer></footer>
+
+  <!-- 测试选择器优先级 -->
+  <div>1</div>
+  <p class="p" id="pp">2</p>
+  <style>
+    div {
+      background-color: #f00;
+    }
+
+    p {
+      background-color: #0f0;
+    }
+
+    .p {
+      background-color: #00f;
+    }
+
+    #pp {
+      background-color: #ff0;
+    }
+  </style>
+
+  <div class="fl"></div>
+  <p>页面底部有更多实例。
+    浏览器支持
+    IE Firefox Chrome Safari Opera
+    IE9+、Firefox 4+、Chrome、Safari 5+ 以及 Opera 支持 border-radius 属性。
+    定义和用法
+    border-radius 属性是一个简写属性，用于设置四个 border-*-radius 属性。
+    提示：该属性允许您为元素添加圆角边框！
+    默认值： 0
+    继承性： no
+    版本： CSS3
+    JavaScript 语法： object.style.borderRadius="5px"
+  </p>
+  <style>
+    .fl {
+      width: 40px;
+      height: 40px;
+      float: left;
+    }
+  </style>
+</body>
+
+</html>

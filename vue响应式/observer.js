@@ -18,7 +18,6 @@ class Observer {
     Object.defineProperty(data, key, {
       get() {
         Dep.target && dep.addSub(Dep.target)
-        console.log(dep);
         return value
       },
       set(newVal) {

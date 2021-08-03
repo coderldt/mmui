@@ -11,7 +11,15 @@
 <body>
   <div id="app">
     <p>{{ msg }}</p>
+    <div>
+      <span>{{ msg }}</span>
+      <span v-show="show">{{ msg }}</span>
+      <div v-show="show">{{ obj.age }}</div>
+      <input type="text" name="" id="">
+      <button @click="asd">+</button>
+    </div>
   </div>
+  <script src="./driectives.js"></script>
   <script src="./observer.js"></script>
   <script src="./compiler.js"></script>
   <script src="./main.js"></script>
@@ -21,7 +29,13 @@
       data: {
         msg: 12,
         obj: {
-          age: 12
+          age: 15
+        },
+        show: true
+      },
+      methods: {
+        asd() {
+          console.log( this );
         }
       }
     } )
