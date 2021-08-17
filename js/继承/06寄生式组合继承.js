@@ -24,6 +24,7 @@ function object(o) {
 function inheritPrototype(parent, child) {
   let prototype = object(parent)
   child.prototype = prototype
+  // child.__proto__ = prototype.constructor
   prototype.constructor = child
 }
 
