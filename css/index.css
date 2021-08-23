@@ -32,8 +32,8 @@
 * {}
 #id {}
 .class {}
-.class[id = '123'] {}
 .class::before {}
+.class[id = '123'] {}
 .class:hover {}
 .class > div {}
 button + button {}
