@@ -2,7 +2,6 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 // 1. 定义路由组件.
 // 也可以从其他文件导入
 import common from '../views/common.vue'
-import es from '../views/es6.vue'
 
 // 2. 定义一些路由
 // 每个路由都需要映射到一个组件。
@@ -10,7 +9,7 @@ import es from '../views/es6.vue'
 const routes = [
   { path: '/', component: common, name: 'first'},
   { path: '/common_2', component: () => import('../views/common_2.vue'), name: 'first_2'},
-  { path: '/es6', component: es, name: 'second' },
+  { path: '/es6', component: () => import('../views/es6.vue'), name: 'second' },
   { path: '/es6_2', component: () => import('../views/es6_2.vue'), name: 'second_2' },
 ]
 
