@@ -56,8 +56,9 @@
 
 ## http的状态和缺点
   + 状态
+    - 灵活，支持多种数据格式（引出下一段）
     - 无状态，每次请求都是一个独立的请求
-    -
+    - 可靠传输，基于tcp链接
   + 缺点
     - 无状态，需要我们额外传入一些字段，去表示用户的身份什么的
     -
@@ -72,3 +73,34 @@
 > 2.0
   - 支持http压缩头部，进行二进制传输
   - 多路复用，同时发送多个请求，不需要等待
+    - 明文传输，容易配破解，可以造成信息的泄露
+
+## http支持格式
+  > 请求头中有个字段content-type 指定了内容的格式
+    - text/html text/css text/plain
+    - image
+    - vedio / audio / mp4
+    - multipart/form-data 表单有文件上传
+    - appication/x-form-urlencodeed： 普通表单类型
+    - multipart/byteranges，boundary=010101010101 分段获取数据，后面为分隔符 （引出分段获取内容）
+
+
+## http不定内容传输
+  > 基于长连接多次发送数据，会使content-type失效
+  - transfer-encoding：chunked
+
+## http获取大数据
+  > range字段，设置每次获取的大小，
+  ``` JS
+    range: bitys=0-9
+  ```
+    - 范围符合则返回206
+    - 范围不符合则返回416
+
+## 同源和跨域
+  > 在协议，ip，端口三者都相同的情况下，则为同源，可以直接访问资源；只要有一者不同，则为非同源需要跨域访问
+  > 浏览器会在请求中添加origin字段，标志从那个元发送请求，后端在control-allow-origin中查找是否存在，存在即可以跨域
+  + nginx反向代理，可以通过nginx把我们的请求反向代理到需要的服务器上，即可以解决
+  + jsonp 例如script的src标签不受同源政策的影响，在url中设置回调函数，在回调函数中拿到需要的数据，缺点src支持get方法
+
+## ajax练习（ajax.js）
