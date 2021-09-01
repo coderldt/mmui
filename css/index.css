@@ -115,3 +115,27 @@ div {
   position: absolute;
   position: fixed;
 }
+
+/* 9.linear-gradient的使用 */
+/* background-image: linear-gradient(
+    #2f271e 0%,
+    red 10% 20%,
+    #2f271e 20% 30%,
+    blue 30% 40%,
+    #2f271e 40% 50%,
+    blue 50% 60%,
+    #2f271e 60% 70%,
+    blue 70% 80%,
+    #2f271e 80% 90%,
+    blue 90%
+); */
+/* 
+  如果指定了颜色的两端，则在两端内，颜色是一种，不是渐变；如果两段颜色没有紧连，则该部分是渐变；可以实现颜色段
+  见：前端/CSS/index.html
+*/
+
+/* 10.box-shadow */
+/* 
+  box-shadow: 30px 0 0 #9b59b6;  指定偏移距离，显示范围和扩散半径都为零，则是将同一个元素复制一份。
+  见：前端/loading.html
+*/
