@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- utf-8编码 -->
+    <div>&#x6211;&#x7684;</div>
+    <div>&#25105;&#30340;</div>
+    <div>&0000FEFF00006211</div>
+    <script>
+        const body = document.querySelector('body')
+        // 统一Unicode 编码
+        let myCode = `\u6211\u7684`
+        body.append(myCode)
+        console.log(myCode);
+    </script>
+</body>
+</html>
