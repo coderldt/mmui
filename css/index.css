@@ -6,6 +6,8 @@
   justify-content: center;
   justify-content: flex-start;
   align-items: center;
+  /* direction wrap 缩写 */
+  flex-flow: row wrap;
 
   flex-wrap: wrap;
   /* 收缩规则 */
@@ -18,13 +20,21 @@
 .flexItem {
   flex: 1;
   flex-wrap: wrap;
-  /* 占比 */
+  /* 基本长度 */
+  flex-basis: 120px;
+  /* 元素延伸 */
   flex-grow: 1;
+  /* 元素收缩 */
+  flex-shrink: 0;
 }
 
 /* 2. css盒模型 */
+/* 盒子 block，inline,inline-blokc 是用来控制该元素的精准布局和排列的功能 */
+/* 盒模型是用来控制元素和元素直接的相互关系，包含四部分，content。padding，boder，margin */
 .box {
+  /* ie和模型，设置的宽高包括content。padding。border */
   box-sizing: content-box;
+  /* 标准和模型，设置宽高包括content */
   box-sizing: border-box;
 }
 
@@ -51,19 +61,35 @@ button + button {}
 div {
   /* 2d变形 */
   transform: rotate();
+  transform: scale();
+  transform: translate();
+  /* x,y轴偏移 */
+  transform: skew();
 
   /* 3d转换 */
   transform: rotate3d();
 
   border-radius: 50%;
-  box-shadow: 0px 0px 5px #eaeaea;
   border-image: url(./base.img);
+  box-shadow: 0px 0px 5px #eaeaea;
+
+  /* 颜色渐变 */
+  background: linear-gradient(red, green, 45deg);
+  background-image: url();
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* 针对与长单词，或者纯数字可以强制换行 */
+  word-wrap: break-word;
 
   /* 动画 */
   animation: alternate;
 
-  /* 颜色渐变 */
-  background: linear-gradient(red, green, 45deg);
+  /* 过渡 */
+  transition: all .5s linear;
+
+  /* 图片滤镜 */
+  filter: grayscale(1);
 }
 
 /* 媒体查询 */
@@ -99,6 +125,7 @@ div {
 /* 8. bfc的理解 */
 /*
   格式化上下文，使其内部的元素排列，从而不影响外面的元素，解决了margin传递的问题
+  补充：独立的布局环境，BFC内部的元素布局和外部的互补影响
   触发方式
 */
 div {
@@ -117,6 +144,7 @@ div {
 }
 
 /* 9.linear-gradient的使用 */
+/* 如果指定了颜色的两端，则在两端内，颜色是一种，不是渐变；如果两段颜色没有紧连，则该部分是渐变；可以实现颜色段 */
 /* background-image: linear-gradient(
     #2f271e 0%,
     red 10% 20%,
@@ -129,13 +157,8 @@ div {
     #2f271e 80% 90%,
     blue 90%
 ); */
-/* 
-  如果指定了颜色的两端，则在两端内，颜色是一种，不是渐变；如果两段颜色没有紧连，则该部分是渐变；可以实现颜色段
-  见：前端/CSS/index.html
-*/
 
 /* 10.box-shadow */
-/* 
+/*
   box-shadow: 30px 0 0 #9b59b6;  指定偏移距离，显示范围和扩散半径都为零，则是将同一个元素复制一份。
-  见：前端/loading.html
 */
