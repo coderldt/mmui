@@ -34,6 +34,7 @@
     1. 缓存：get会被浏览器主动缓存，而post不会
     2. 参数：get的参数会用&拼接在url后面，而post是附加在body里面
     3. tcp：get会这一次性发送，post会分两次，第一次发送请求报文的头部，等待服务器响应100，在发送请求报文体（post我没遇见过，可能有小部分会分两次，不是http的事情）
+    4. get幂等类型，有幂等类型的数据，最好用get请求，因为get请求会被浏览器默认缓存，给服务器缓解压力。
 
 
 ## uri和url
@@ -46,8 +47,8 @@
   + 1** （成功，但还需要继续执行）
   + 2** （请求成功）
   + 3** （资源重定向）
-    - 301 资源临时重定向
-    - 302 资源永久重定向
+    - 301 资源永久重定向
+    - 302 资源临时重定向
     - 304 采用缓存
   + 4** （客户端错误）
     - 404 资源找不到
@@ -61,7 +62,7 @@
     - 可靠传输，基于tcp链接
   + 缺点
     - 无状态，需要我们额外传入一些字段，去表示用户的身份什么的
-    -
+    - 明文传输，数据可能被劫持
 
 ## http 1.0 / 1.1 / 2.0 的区别
 > 1.0
@@ -77,13 +78,16 @@
 
 ## http支持格式
   > 请求头中有个字段content-type 指定了内容的格式
-    - text/html text/css text/plain
-    - image
-    - vedio / audio / mp4
+    - text  text/html text/css text/plain
+    - image  image/png image/gif
+    - audio/vedio  audio/mp3 vedio/mp4
     - multipart/form-data 表单有文件上传
-    - appication/x-form-urlencodeed： 普通表单类型
+    - appication/x-form-urlencodeed： 普通表单类型 pdf, json javascript
     - multipart/byteranges，boundary=010101010101 分段获取数据，后面为分隔符 （引出分段获取内容）
 
+## 数据压缩格式
+- content-encoding: gzip / deflate / br
+  - deflate 采用了哈夫曼编码的无损数据的压缩算法
 
 ## http不定内容传输
   > 基于长连接多次发送数据，会使content-type失效
@@ -99,7 +103,7 @@
 
 ## 同源和跨域
   > 在协议，ip，端口三者都相同的情况下，则为同源，可以直接访问资源；只要有一者不同，则为非同源需要跨域访问
-  > 浏览器会在请求中添加origin字段，标志从那个元发送请求，后端在control-allow-origin中查找是否存在，存在即可以跨域
+  > 浏览器会在请求中添加origin字段，标志从那个源发送请求，后端在control-allow-origin中查找是否存在，存在即可以跨域
   + nginx反向代理，可以通过nginx把我们的请求反向代理到需要的服务器上，即可以解决
   + jsonp 例如script的src标签不受同源政策的影响，在url中设置回调函数，在回调函数中拿到需要的数据，缺点src支持get方法
 
