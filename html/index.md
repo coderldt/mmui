@@ -1,0 +1,21 @@
+## html5
+> html5是新一代的html标准
+- 语义化标签 用正确的标签做正确的事，可以做到网站的seo，更利于网络爬虫的抓取，更容易的维护和开发
+  - headers
+  - nav
+  - article
+  - aside
+  - footer
+  - audio
+  - video
+  - canvas
+  - svg
+- websocket 是一个长链接的全双工的通信协议，就是支持服务端主动发送消息到客户端，进行双向数据通信。
+- 可以获取用户的定位
+  - getCurrentPosition 对象 返回经纬度，方向，海拔，速度啥的
+  - watchLotion 方法 接受一个函数，持续返回用户的位置信息
+- web缓存
+  - localStorage
+  - sessionStorage
+- webworker
+  - 提供浏览器开启多线程的api，可以不占用主线程，异步执行一些大任务
