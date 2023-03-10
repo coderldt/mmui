@@ -108,3 +108,7 @@
   + jsonp 例如script的src标签不受同源政策的影响，在url中设置回调函数，在回调函数中拿到需要的数据，缺点src支持get方法
 
 ## ajax练习（ajax.js）
+
+
+超文本传输协议，超文本不局限与文字，音频视频，json等等格式，浏览器和服务器之间通信的规则。语言，基于tcp传输请求。
+get、post、delete、options、head、put
