@@ -1,3 +1,10 @@
+## es6
+## var let const
+- let const 块级作用域，var 函数作用域
+- var 会变量提升，值为 undefined，let const 不会变量提升，提前访问报错。
+
+
+
 // 1.set
 // 类似一个数组，但是所有成员都是唯一的，不能重复，一半用来数组去重
 let newSet = new Set()
