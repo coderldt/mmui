@@ -1,0 +1,30 @@
+{
+  "name": "mmui",
+  "version": "1.1.0",
+  "main": "index.js",
+  "repository": "https://github.com/coderldt/mmui.git",
+  "author": "lvchao <chao.lv@brgroup.com>",
+  "license": "MIT",
+  "scripts": {
+    "cz": "git cz",
+    "release": "standard-version"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.3",
+    "standard-version": "^9.5.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
