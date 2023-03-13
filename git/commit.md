@@ -16,3 +16,6 @@
   - 全局安装 conventional-changelog-cli
   - 本地安装 standard-version 必须全局有包，不然会安装失败，在项目中使用需小心
   - script "release": "standard-version"
+
+## 注意
+> 新下载的项目 需要 "prepare": "husky install"，才能校验
