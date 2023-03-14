@@ -11,6 +11,22 @@
   - echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
   - npx husky install // 生成 husky 文件
   - npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
+#### 自定义
+[链接](https://blog.csdn.net/weixin_52834435/article/details/126253581)
+``` json
+  // package.json
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+      // "path": "./node_modules/cz-customizable"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+```
 
 ## 版本控制和生成Changelog
   - 全局安装 conventional-changelog-cli
