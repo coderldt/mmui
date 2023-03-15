@@ -66,63 +66,20 @@
 ## iterator
 > iterator 是 es6 提供**统一的接口机制，来处理所有不同的数据结构**。任何数据结构只要部署 Iterator 接口，就可以完成遍历操作。
 > 内部有一个指针，遍历的时候，返回当前的值，并自动移动到下一个地方，直到最后一个。返回 value 和 done .
--
 
-// 1.set
-// 类似一个数组，但是所有成员都是唯一的，不能重复，一半用来数组去重
-let newSet = new Set()
-// 方法
-newSet.add(1)
-newSet.add(1)
-newSet // [1] 类似
-newSet.delete(1)
-newSet.has(1)
-newSet.clear()
+## generator
+- 一种**异步编程解决方案**,提供了函数暂停的能力，函数返回一个 iterator 遍历器，每次调用 next 的时间，就跳转到下一个 yield ， 直到 return 。
+- 特征: 函数名和 function 关键字中间有个 * 号。
 
-// 遍历方法
-newSet.keys()
-newSet.values()
-newSet.entries()
-newSet.forEach()
+## async
+- 是 generator 的语法糖， async -> * ， await -> yidle . 都是暂停函数的执行，等待结果的返回。
+- 函数返回一个 Promise
 
-// 2. weakSet
-// 只接受对象作为成员，不可重复
-let newWeakSet = new WeakSet()
-newWeakSet.add(1)
-newWeakSet.add(1)
-newWeakSet // [1] 类似
-newWeakSet.delete(1)
-newWeakSet.has(1)
-
-// 遍历方法
-// 因为是弱引用，所以无法遍历
-
-// 3. map
-// js的普通对象值能接受字符串-值的类型存储，map提供了js存储对象-对象数据的能力。
-let newMap = new Map()
-
-newMap.set(document.querySelector('body'), { age: 12 })
-newMap.set(2, { age: 12 })
-
-newMap.get(2)
-newMap.delete(2)
-newMap.clear()
-
-// 遍历
-newMap.keys()
-newMap.values()
-newMap.entries()
-newMap.forEach()
-
-// 4. weakMap
-// 只接受对象作为key，不接受其他类型。都是弱引用，不计入垃圾回收机制。
-let newWeakMap = new WeakMap()
-
-newWeakMap.set(document.querySelector('body'), { age: 12 })
-newWeakMap.set(2, { age: 12 })
-
-newWeakMap.get(2)
-newWeakMap.delete(2)
-newWeakMap.clear()
-
-// 遍历（不支持）
+##  class
+- es5 编写类通过 function + prototype 的方式来实现类，和面向对象语言的写法差距很大，为了更接近传统语言的写法，引入了 class 类，是一种语法糖吧。
+- constructor
+- get set 自定义 读取/赋值 属性的操作方法
+- 静态方法
+  - 静态方法 static 标识的方法，只能通过类本身去调用，可以备子类继承，静态方法可以从 super 调用。
+  - 静态属性 static 标识的属性，只能通过类本身去调用。
+  - 私有属性 # 标识的属性，只能在类内部使用，
