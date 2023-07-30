@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const demo = () => {
+      console.log(this);
+    }
+
+    // console.log('demo of this', demo());
+
+
+    const thisObj = {
+      name: '123'
+    }
+
+    const obj = {
+      age: 20,
+      demo: demo.bind(thisObj)
+    }
+    // console.log('obj of this', obj);
+
+
+    // demo()
+    obj.demo()
+
+
+  </script>
+</body>
+
+</html>

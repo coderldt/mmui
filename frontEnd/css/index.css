@@ -1,0 +1,164 @@
+/* 1. flex 常用属性 */
+.flex {
+  display: flex;
+  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  /* direction wrap 缩写 */
+  flex-flow: row wrap;
+
+  flex-wrap: wrap;
+  /* 收缩规则 */
+  flex-shrink: 0;
+
+  /* 设置初始大小 */
+  flex-basis: auto;
+}
+
+.flexItem {
+  flex: 1;
+  flex-wrap: wrap;
+  /* 基本长度 */
+  flex-basis: 120px;
+  /* 元素延伸 */
+  flex-grow: 1;
+  /* 元素收缩 */
+  flex-shrink: 0;
+}
+
+/* 2. css盒模型 */
+/* 盒子 block，inline,inline-blokc 是用来控制该元素的精准布局和排列的功能 */
+/* 盒模型是用来控制元素和元素直接的相互关系，包含四部分，content。padding，boder，margin */
+.box {
+  /* ie和模型，设置的宽高包括content。padding。border */
+  box-sizing: content-box;
+  /* 标准和模型，设置宽高包括content */
+  box-sizing: border-box;
+}
+
+/* 3. 选择器 */
+* {}
+#id {}
+.class {}
+.class::before {}
+.class[id = '123'] {}
+.class:hover {}
+.class > div {}
+button + button {}
+
+/* 4. 选择器优先级 */
+/*
+  !important > 内连 > *
+  div: 1
+  class: 10
+  id: 100
+*/
+
+/* 5. css3新增属性 */
+/* 1、普通属性 */
+div {
+  /* 2d变形 */
+  transform: rotate();
+  transform: scale();
+  transform: translate();
+  /* x,y轴偏移 */
+  transform: skew();
+
+  /* 3d转换 */
+  transform: rotate3d();
+
+  border-radius: 50%;
+  border-image: url(./base.img);
+  box-shadow: 0px 0px 5px #eaeaea;
+
+  /* 颜色渐变 */
+  background: linear-gradient(red, green, 45deg);
+  background-image: url();
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* 针对与长单词，或者纯数字可以强制换行 */
+  word-wrap: break-word;
+
+  /* 动画 */
+  animation: alternate;
+
+  /* 过渡 */
+  transition: all .5s linear;
+
+  /* 图片滤镜 */
+  filter: grayscale(1);
+}
+
+/* 媒体查询 */
+@media screen {
+
+}
+
+/* 6. div垂直水平居中 */
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+}
+
+div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+}
+
+/* 7. display 的值 */
+div {
+  display: none;
+  display: block;
+  display: inline-block;
+}
+
+/* 8. bfc的理解 */
+/*
+  格式化上下文，使其内部的元素排列，从而不影响外面的元素，解决了margin传递的问题
+  补充：独立的布局环境，BFC内部的元素布局和外部的互补影响
+  触发方式
+*/
+div {
+  /* 不为none */
+  float: left;
+
+  /* 不为none */
+  overflow: hidden;
+
+  /* inline-block */
+  display: inline-block;
+
+  /* 定位 */
+  position: absolute;
+  position: fixed;
+}
+
+/* 9.linear-gradient 的深入理解使用 */
+/* 如果指定了颜色的两端，则在两端内，颜色是一种，不是渐变；如果两段颜色没有紧连，则该部分是渐变；可以实现颜色段 */
+/* background-image: linear-gradient(
+    #2f271e 0%,
+    red 10% 20%,
+    #2f271e 20% 30%,
+    blue 30% 40%,
+    #2f271e 40% 50%,
+    blue 50% 60%,
+    #2f271e 60% 70%,
+    blue 70% 80%,
+    #2f271e 80% 90%,
+    blue 90%
+); */
+
+/* 10.box-shadow */
+/*
+  box-shadow: 30px 0 0 #9b59b6;  指定偏移距离，显示范围和扩散半径都为零，则是将同一个元素复制一份。
+*/
