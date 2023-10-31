@@ -94,6 +94,8 @@
   > 浏览器会在请求中添加origin字段，标志从那个源发送请求，后端在control-allow-origin中查找是否存在，存在即可以跨域
   + nginx反向代理，可以通过nginx把我们的请求反向代理到需要的服务器上，即可以解决
   + jsonp 例如script的src标签不受同源政策的影响，在url中设置回调函数，在回调函数中拿到需要的数据，缺点src支持get方法
+  + cors 服务端在响应头中携带cors相关的字段，也可以解决
+  + websocket 不受跨域影响
 
 ## ajax练习（ajax.js）
 

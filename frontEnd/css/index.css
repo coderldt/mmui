@@ -32,10 +32,10 @@
 /* 盒子 block，inline,inline-blokc 是用来控制该元素的精准布局和排列的功能 */
 /* 盒模型是用来控制元素和元素直接的相互关系，包含四部分，content。padding，boder，margin */
 .box {
-  /* ie和模型，设置的宽高包括content。padding。border */
-  box-sizing: content-box;
-  /* 标准和模型，设置宽高包括content */
+  /* ie和模型，设置的宽高包括content。padding。border， 兼容旧浏览器，ie6 ie7 会用到 */
   box-sizing: border-box;
+  /* 标准和模型，设置宽高包括content */
+  box-sizing: content-box;
 }
 
 /* 3. 选择器 */
@@ -93,6 +93,9 @@ div {
 }
 
 /* 媒体查询 */
+/* 媒体查询（Media Queries）是CSS3中的一个功能，允许你根据不同的媒体类型和特定的条件来应用不同的样式。
+它允许你根据设备的特性、视口的属性、屏幕分辨率等等来调整网页的布局和样式，使得网页可以在不同的设备和屏
+幕上得到良好的显示效果 */
 @media screen {
 
 }
@@ -127,6 +130,7 @@ div {
   格式化上下文，使其内部的元素排列，从而不影响外面的元素，解决了margin传递的问题
   补充：独立的布局环境，BFC内部的元素布局和外部的互补影响
   触发方式
+  解决问题：1. 清除浮动 2. 阻止 margin 合并 3. 解决高度坍塌的问题
 */
 div {
   /* 不为none */
