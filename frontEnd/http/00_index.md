@@ -72,6 +72,7 @@
     - multipart/form-data 表单有文件上传
     - appication/x-form-urlencodeed： 普通表单类型 pdf, json javascript
     - multipart/byteranges，boundary=010101010101 分段获取数据，后面为分隔符 （引出分段获取内容）
+  - Etag
 
 ## 数据压缩格式
 - content-encoding: gzip / deflate / br
