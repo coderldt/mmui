@@ -5,7 +5,7 @@
   - 选项式api：声明选项是结构编写组件。
 - 组合式api的语法糖：在 script 中添加 setup 属性，是我们在单文件组件中，使用组合式aou的语法糖。可以实现更简洁的代码，更好的类型推导。
 - teleport: 一个内置组件，可以把组件中的内容，挂载到组件指定 dom 中的任何位置。
-- vue3 支持多节点组件，vue2 只支持单节点。
+- Fragments: vue3 支持多节点组件，vue2 只支持单节点。
 - 手动定义接受 props 、 emits 、 expose
 - 可以在 style 中通过 v-bind 使用 变量
 

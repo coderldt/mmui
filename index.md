@@ -5,6 +5,7 @@
 ## 代做
 - 输入 url 的全流程，以及各流程的优化方式
 - canvas
+- web 终端调试方法：https://hughfenghen.github.io/posts/2023/12/23/web-spy/
 
 ## Vue.js 3 与 Vue.js 2 在代理方面的区别主要在以下方面：
 - Proxy API 替代了 Object.defineProperty API： 在 Vue.js 2 中，使用 Object.defineProperty API 来进行数据的响应式代理。而在 Vue.js 3 中，使用了 ES6 中的 Proxy API 来进行数据的响应式代理。这个改变使得 Vue.js 3 更加灵活和强大。
