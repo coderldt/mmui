@@ -44,6 +44,8 @@ cat /var/log/mysqld.log | grep password
 8. 新增用户并授权 * 访问
 ``` shell
   CREATE USER 'newuser'@'%' IDENTIFIED BY 'newpassword';
+  # 用 root 授予 lc 全部权限
+  GRANT ALL PRIVILEGES ON *.* TO 'lc'@'%';
   FLUSH PRIVILEGES;
 ```
 
