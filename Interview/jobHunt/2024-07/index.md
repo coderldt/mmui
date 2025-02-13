@@ -32,3 +32,52 @@
 - vue2 和vue3的功能
 - vue2的源码， keep-alive
 - 基础知识
+
+- url 到回显内容,如何做优化
+  - DNS解析：优化建议：使用快速、可靠的DNS服务，如Google DNS或Cloudflare DNS；在服务器和客户端使用DNS缓存。
+  - TCP连接建立：优化建议：启用TCP Fast Open；减少连接数，通过HTTP/2复用连接。
+  - TLS握手：优化建议：使用TLS 1.3，减少握手时间；启用会话恢复，减少重复连接的开销。
+  - HTTP请求发送：优化建议：压缩请求头；合并请求，减少请求次数；使用GET请求查询缓存。
+  - 后端处理：优化建议：优化服务器处理速度，使用缓存（如Redis、Memcached）；使用高效的数据库查询和索引；负载均衡，分散流量。
+  - 内容生成：  优化建议：提前生成静态内容，减少动态生成的次数；使用高效的模板引擎；进行内容压缩，如Gzip。
+  - 内容传输：优化建议：启用内容传输压缩；使用CDN，将内容分发到离用户更近的服务器；减少传输数据量，精简HTML、CSS和JavaScript。
+  - 浏览器渲染：  优化建议：
+  HTML：尽量减少DOM元素的数量；避免复杂的嵌套和深层次的节点。
+  CSS：减少CSS文件的大小和数量；使用CSS压缩工具；避免使用复杂的选择器。
+  JavaScript：减少JavaScript文件的大小和数量；将非关键JavaScript异步加载；避免阻塞渲染的脚本。
+  图片：使用现代的图像格式（如WebP）；延迟加载非关键图片；使用适当的图片尺寸和分辨率。
+  - 缓存策略：优化建议：合理设置HTTP缓存头（如Cache-Control、ETag）；使用服务工作者（Service Workers）进行离线缓存。
+  - 性能监控和分析：优化建议：使用性能监控工具（如Google Lighthouse、WebPageTest）进行定期检查；分析性能瓶颈，持续优化。
+
+- webpack 打包优化
+  - 提取公共代码 入口添加common
+    - splitChunks 公共js
+    - mini-css-extract-plugin 公共css
+  - 压缩代码
+    - 生产模式自带压缩
+    - css-minimizer-webpack-plugin 压缩css
+  - Tree Shaking
+  - 丑化代码
+  - 代码分割, 降低文件的大小 配置多入口
+
+- webpack - vite
+  - 一个基于node 一个是 rollup
+  - webpack 在 代码拆分, 以及负责情况下的打包能力, 文件有一些冗余的内容, 加载自然更慢一些
+  - rollup 基于 esmodules在 tree-shaking 上有天然的优势, 主旨, 尽可能产生更小的文件和尽可能块的代码
+  - esmodules 是异步加载 CommonJS 是同步加载, 只有上个加载完,才能下载下一个
+  - esmodules 支持静态优化, 所以更好支持 tree-shaking
+  - CommonJS 支持逻辑判断,动态引入  esmodules 不行
+
+- history - hash
+  - 从表象来看, hash 有一个 # history 没有#号
+  - 从本质上来看, url 中的 # 是锚点的概念, 作用是滚动到对应元素id的位置, 他后面的值改变, 其实只会影响前端的页面,和后端无关, history是url的改变, 会发送到后端get请求的.
+  - vue-router 是如何实现的, 处理的两者的差异, 通过 hashChange 和 popState 监听 hash 和history 路由的变化, 然后记录当前值, 然后再 router-view 获取到 当前值, 通过 map 获取当前组件, 通过 渲染函数实现出来.
+
+- ts 常用方法
+  - partail
+  - required
+  - readonly
+  - reocrd
+  - pick
+  - omit
+  - exclude
