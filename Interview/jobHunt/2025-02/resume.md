@@ -1,10 +1,18 @@
 ## 个人优势
 1.熟练掌握 HTML、CSS、Javascript 等前端技术, 熟悉ES6+规范, 熟悉常见跨域, 了解必要的计算机网络协议, 能写出符合W3C标准的代码。
-2.熟练使用 vue2、vue3、vue-router、vuex, NodeJS, typescript 技术开发, 深入应用并深入理解其设计原理, 有良好的 web 前端优化经验, 了解 react。
+2.熟练使用 vue2、vue3、vue-router、vuex、NodeJS、typescript、uniapp 技术开发, 深入应用并深入理解其设计原理, 有良好的 web 前端优化经验, 了解 react。
 3.负责过完整项目的应用技术框架搭建, 关键技术选型, 有团队或者独立负责业务的能力, 能根据需求, 基建组件开发, 高效支撑业务。
 4.熟练使用 git 工具进行代码控制与协作, 能手动部署项目。
 5.熟悉 web 组件化、模块化开发模式, 熟悉面向对象开发, 熟悉 webpack, vite, npm 等前端构建工具和流程。
 6.熟悉 NodeJS server 端语言, 熟练使用 egg.js 框架进行设计和开发。
+
+### 旧
+1.熟练掌握 HTML/CSS/javascript 等前端技术，能写出符合W3C标准的代码。
+2.熟练 javascript 以及 ES6 新特新，js 常用库如 lodash、Echarts、axios、ant-design、element-ui，css3 新特性，html5 新特性，协议，安全，性能等前端技术。
+3.熟练使用 vue2、vue3、vue-router、vuex，NodeJS，typescript 技术开发，深入应用并深入理解其设计原理，了解react。
+4.负责过完整项目的应用技术框架搭建，关键技术选型，有团队或者独立负责业务的能力，能根据需求，基建组件开发，高效支撑业务。
+5.熟练使用 git 工具进行代码控制与协作，能手动部署项目。
+6. 熟悉WEB组件化、模块化开发模式，熟悉面向对象开发，熟悉webpack，vite，npm等前端构建工具和流程。
 
 ## 伊斯德尔
 1.负责 web 端营商环境, 小程序方面的前端需求对接, 评估开发周期, 任务开发。
