@@ -26,3 +26,6 @@
 - 前端tdk
 - site-map
 - 微数据结构化
+
+- 大屏可视化
+- echarts h5 环境监测的时候，会获取window.wx  然会会报错，要提前声明一下 window.wx = {}
