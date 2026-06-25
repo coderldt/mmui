@@ -38,3 +38,6 @@
       3. 直到 pointerup 或 releasePointerCapture 才会恢复默认行为
   - pdf保存之后，需要重新创建key才能继续编辑。onlineoffice 内部设计
   - insertImage 有个 token 参数，cursor 查询源码之后，发现，传了 token 之后，应该是采用的其他jwt图片，不传，才是采用 api 传的 images 参数
+- oss 资源被当图床，上传文件名是 webp,但实际是视频的切片，被三方免费盗用流量
+  - oss上传完，回调服务端接口，来判断文件是否合规，自动删除 (针对非法上传资源方向)
+  - 客户端先上传临时目录，在调用后端接口校验合法，移动到正确的位置。
