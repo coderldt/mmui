@@ -2,7 +2,9 @@
 
 ## 专题：Nuxt 3 SSR、Vue Runtime 与依赖树
 
-> 来源标记：以下问题由 `Interview/index.md` 中的「Nuxt 3 使用 NuxtLayout 后 SSR 源代码缺失」问题拆解而来。
+> 来源：[Nuxt 3 使用 NuxtLayout 后 SSR 源代码缺失](./problem.md)。以下问题由该真实工程案例拆解而来。
+>
+> 本文件与原始问题位于同一案例目录，用于表达“真实问题 → 原理拆解 → 面试题”的对应关系。
 >
 > 原始现象：页面在浏览器中可以正常显示，但 `/en` 的原始 HTML 中没有 `pages/index.vue` 正文；只使用 `<NuxtPage />` 时 SSR 正常，使用 `<NuxtLayout><NuxtPage /></NuxtLayout>` 时正文缺失。最终发现项目根目录的 `vue@3.5.13` 与 Nuxt 子树的 `vue@3.5.19` 并存，导致 `NuxtLayout` 的异步布局、`Suspense` 和 SSR 上下文跨 Vue Runtime 工作异常。
 
